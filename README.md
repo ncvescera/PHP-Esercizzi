@@ -1,2 +1,2 @@
-# PHP-Esercizzi
-Alcuni esercizi in PHP
+# PHP-Esercizzi - EQUAZIONI
+Programma che permette di risolvere un equazione di secondo grado.
