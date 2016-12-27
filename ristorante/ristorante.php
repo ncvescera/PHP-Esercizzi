@@ -25,7 +25,7 @@
       //alert(pizze);
     }
 
-    //converte l'array in JSON per poi passarlo a php 
+    //converte l'array in JSON per poi passarlo a php
     function send(){
       window.location.href = "elabora.php?dati="+JSON.stringify(pizze);
     }
@@ -51,6 +51,6 @@
     fclose($file);
   ?>
   <br>
-  <button type="submit" onclick="send()">Invia</button>
+  <button type="submit" onclick="send()">Invia</button> <a href="annulla.php"><button type="submit">annulla</button></a>
 </body>
 </html>
