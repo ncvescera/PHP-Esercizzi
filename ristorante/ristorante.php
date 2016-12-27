@@ -22,32 +22,35 @@
       else {
         remove(value);
       }
-      alert(pizze);
+      //alert(pizze);
+    }
+
+    //converte l'array in JSON per poi passarlo a php 
+    function send(){
+      window.location.href = "elabora.php?dati="+JSON.stringify(pizze);
     }
   </script>
 
 </head>
 <body>
-  <form>
-    <h1>Seleziona le pizze</h1>
-    <?php
-      session_start();
+  <h1>Seleziona le pizze</h1>
+  <?php
+    session_start();
 
-      $file = fopen("data.dat","r") or die("File inesistente!"); //apertura del file con le pizze
+    $file = fopen("data.dat","r") or die("File inesistente!"); //apertura del file con le pizze
 
-      //lettura del file e creazione delle checkbox
-      $i = 0;
-      while(!feof($file)){
-        $line = fgets($file);
-        if($line != null){
-          echo '<input type="checkbox"'."name=\"$i\" value=\"$line\" onchange=\"change(this.value)\">$line<br>";
-          $i++;
-        }
+    //lettura del file e creazione delle checkbox
+    $i = 0;
+    while(!feof($file)){
+      $line = fgets($file);
+      if($line != null){
+        echo '<input type="checkbox"'."name=\"$i\" value=\"$line\" onchange=\"change(this.value)\">$line<br>";
+        $i++;
       }
-      fclose($file);
-    ?>
-    <br>
-    <button type="submit">Invia</button>
-  </form>
+    }
+    fclose($file);
+  ?>
+  <br>
+  <button type="submit" onclick="send()">Invia</button>
 </body>
 </html>
