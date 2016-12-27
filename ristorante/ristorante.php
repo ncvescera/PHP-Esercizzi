@@ -29,6 +29,7 @@
 </head>
 <body>
   <form>
+    <h1>Seleziona le pizze</h1>
     <?php
       session_start();
 
@@ -45,6 +46,8 @@
       }
       fclose($file);
     ?>
+    <br>
+    <button type="submit">Invia</button>
   </form>
 </body>
 </html>

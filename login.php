@@ -8,10 +8,10 @@
 
     //scelta della pagina da caricare
     if ($_SESSION['tipo'] == "cliente") {
-      header("Location:cliente.php");
+      header("Location:cliente/cliente.php");
     }
     else {
-      header("Location:ristorante.php");
+      header("Location:ristorante/ristorante.php");
     }
 
 
