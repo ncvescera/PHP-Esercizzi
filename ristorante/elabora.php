@@ -12,5 +12,5 @@
   session_destroy(); //distruzione della sessione
 
   echo "<h1>File scritto correttamente!</h1>";
-  echo "Torna alla home <a href=\"/index.html\"><button>Home</button></a>";
+  echo "Torna alla home <a href=\"../index.html\"><button>Home</button></a>";
 ?>

@@ -51,6 +51,6 @@
     fclose($file);
   ?>
   <br>
-  <button type="submit" onclick="send()">Invia</button> <a href="annulla.php"><button type="submit">annulla</button></a>
+  <button type="submit" onclick="send()">Invia</button> <a href="../annulla.php"><button type="submit">annulla</button></a>
 </body>
 </html>
