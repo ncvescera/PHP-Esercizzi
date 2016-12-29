@@ -70,7 +70,7 @@
         fclose($file);
       ?>
       <br>
-      <button class="btn btn-success" type="submit" onclick="send()">Invia</button> <a href="../annulla.php"><button class="btn btn-warning" type="submit">annulla</button></a>
+      <button class="btn btn-success" style="width: 25%;" type="submit" onclick="send()">Invia</button> <a href="../annulla.php"><button class="btn btn-warning" style="width: 25%;" type="submit">annulla</button></a>
   </div>
 </div>
 </body>
