@@ -2,20 +2,32 @@
 <head>
   <title>LogIn</title>
   <meta charset="utf-8">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
 </head>
 <body>
-  <h1>Login</h1>
-  <form action="login.php" method="post">
-    <label for="nome">Nome: </label><input type="text" name="nome">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <h1>Login</h1>
 
-    <label for="cognome">Cognome: </label><input type="text" name="cognome">
+      <form action="login.php" method="post">
+        <label for="nome">Nome: </label> <input type="text" name="nome">
 
-    <select name="tipo">
-      <option value="cliente">Cliente</option>
-      <option value="ristorante">Ristorante</option>
-    </select>
+        <label for="cognome">Cognome: </label> <input type="text" name="cognome">
 
-    <button type="submit">Accedi</button>
-  </form>
+        <select name="tipo" style="width: 15%;">
+          <option value="cliente">Cliente</option>
+          <option value="ristorante">Ristorante</option>
+        </select>
+
+        <br><br>
+        <button class="btn btn-success" id="sender" type="submit" style="width: 100%;">Accedi</button>
+      </form>
+</div>
+</div>
 </body>
 </html>
