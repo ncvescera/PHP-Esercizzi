@@ -1,5 +1,11 @@
 <html>
 <head>
+  <title>Ristorante</title>
+  <meta charset="utf-8">
+
+  <!--Bootrsap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
   <script>
     var pizze = new Array(); //array che conterrà le pizze selezionate
 
@@ -33,24 +39,39 @@
 
 </head>
 <body>
-  <h1>Seleziona le pizze</h1>
-  <?php
-    session_start();
+  <!--Navbar -->
+  <nav class="navbar navbar-inverse">
+   <div class="container-fluid">
+     <div class="navbar-header">
+       <a class="navbar-brand" href="#">Ristorante di: <?php session_start(); echo $_SESSION['nome']." ".$_SESSION['cognome'];?></a>
+     </div>
+   </div>
+ </nav>
 
-    $file = fopen("data.dat","r") or die("File inesistente!"); //apertura del file con le pizze
+ <div class="row">
+   <div class="col-sm-4 col-sm-offset-4">
+     <h1>Seleziona le pizze</h1>
+      <?php
+        session_start();
 
-    //lettura del file e creazione delle checkbox
-    $i = 0;
-    while(!feof($file)){
-      $line = fgets($file);
-      if($line != null){
-        echo '<input type="checkbox"'."name=\"$i\" value=\"$line\" onchange=\"change(this.value)\">$line<br>";
-        $i++;
-      }
-    }
-    fclose($file);
-  ?>
-  <br>
-  <button type="submit" onclick="send()">Invia</button> <a href="../annulla.php"><button type="submit">annulla</button></a>
+        $file = fopen("data.dat","r") or die("File inesistente!"); //apertura del file con le pizze
+
+        //lettura del file e creazione delle checkbox
+        $i = 0;
+        while(!feof($file)){
+          $line = fgets($file);
+          if($line != null){
+            echo '<div class="checkbox">';
+            echo '<label><input type="checkbox"'."name=\"$i\" value=\"$line\" onchange=\"change(this.value)\">$line</label>";
+            echo "</div>";
+            $i++;
+          }
+        }
+        fclose($file);
+      ?>
+      <br>
+      <button class="btn btn-success" type="submit" onclick="send()">Invia</button> <a href="../annulla.php"><button class="btn btn-warning" type="submit">annulla</button></a>
+  </div>
+</div>
 </body>
 </html>
